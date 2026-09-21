@@ -1,6 +1,10 @@
 const $ = (selector) => document.querySelector(selector);
 const properties = window.PROPERTIES;
 const stations = ["高田馬場", "新宿", "西新宿", "大久保", "新大久保", "早稲田", "池袋"];
+const storageKey = "nestTokyoPropertyActionsV1";
+const statuses = ["未確認", "優先", "問い合わせ予定", "問い合わせ済", "内見予定", "保留", "対象外"];
+const notePresets = ["", "保育用途を確認", "2方向避難を確認", "エレベーターを確認", "図面・消防設備を確認", "賃料条件を確認", "内見を手配", "担当者へ再連絡"];
+let actions = loadActions();
 
 const contactDetails = {
   "takadanobaba-1-2f": {building:"ビル名非公開", url:"https://www.inshokuten.com/bukken/bukkens/399219", company:"取扱不動産会社（会員登録後に表示）", contact:"詳細ページの「問い合わせる」から無料問い合わせ"},
@@ -23,22 +27,58 @@ stations.forEach((station) => $("#station").insertAdjacentHTML("beforeend", `<op
 
 const escapeHtml = (value) => String(value).replace(/[&<>\"']/g, (character) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[character]));
 
+function loadActions() {
+  try { return JSON.parse(localStorage.getItem(storageKey)) || {}; } catch { return {}; }
+}
+
+function saveActions() { localStorage.setItem(storageKey, JSON.stringify(actions)); }
+
+function actionPanel(property) {
+  const saved = actions[property.id] || {status:"未確認", note:""};
+  const buttons = statuses.map((value) => `<button type="button" class="status-button ${saved.status === value ? "active" : ""}" data-action="status" data-value="${escapeHtml(value)}">${escapeHtml(value)}</button>`).join("");
+  const options = notePresets.map((note) => `<option value="${escapeHtml(note)}">${note ? escapeHtml(note) : "よく使うメモを選択"}</option>`).join("");
+  return `<section class="action-panel" data-property-id="${escapeHtml(property.id)}"><div class="action-title"><b>対応状況・メモ</b><span>この端末のブラウザに保存</span></div><div class="status-buttons">${buttons}</div><label class="note-label">メモ候補<select data-action="preset">${options}</select></label><textarea data-action="note" rows="3" placeholder="自由にメモを入力できます">${escapeHtml(saved.note || "")}</textarea><div class="action-footer"><span class="save-message" aria-live="polite"></span><button type="button" class="save-button" data-action="save">メモを保存</button><button type="button" class="clear-button" data-action="clear">リセット</button></div></section>`;
+}
+
 function createCard(property, index) {
   const details = contactDetails[property.id];
-  return `<article class="card" style="--delay:${index * 35}ms"><div class="card-top"><span class="index">${String(index + 1).padStart(2, "0")}</span><span class="badge ${property.fit}">${escapeHtml(property.fitLabel)}</span></div><h2>${escapeHtml(details.building)}</h2><p class="unit">${escapeHtml(property.name)}</p><p class="location">${escapeHtml(property.station)}駅・徒歩${property.walk}分　${escapeHtml(property.address)}</p><div class="key"><div><b>${property.area}</b><span>㎡</span></div><div><b>${escapeHtml(property.floor)}</b><span>募集階</span></div><div><b>${escapeHtml(property.rent)}</b><span>賃料</span></div></div><dl><div><dt>募集用途</dt><dd>${escapeHtml(property.type)}</dd></div><div><dt>構造・築年</dt><dd>${escapeHtml(property.structure)}</dd></div><div><dt>エレベーター</dt><dd>${escapeHtml(property.elevator)}</dd></div><div><dt>独立した2出口</dt><dd>${escapeHtml(property.exits)}</dd></div></dl><div class="assessment"><b>保育施設としての一次評価</b><p>${escapeHtml(property.reason)}</p></div><div class="contact"><b>問い合わせ先</b><p>${escapeHtml(details.company)}<br><strong>${escapeHtml(details.contact)}</strong></p></div><p class="evidence">確認メモ：${escapeHtml(property.evidence)}</p><div class="card-foot"><span>${escapeHtml(property.published)}</span><a class="source-button" href="${details.url}" target="_blank" rel="noopener">元の物件詳細・問い合わせ ↗</a></div></article>`;
+  return `<article class="card" style="--delay:${index * 35}ms"><div class="card-top"><span class="index">${String(index + 1).padStart(2, "0")}</span><span class="badge ${property.fit}">${escapeHtml(property.fitLabel)}</span></div><h2>${escapeHtml(details.building)}</h2><p class="unit">${escapeHtml(property.name)}</p><p class="location">${escapeHtml(property.station)}駅・徒歩${property.walk}分　${escapeHtml(property.address)}</p><div class="key"><div><b>${property.area}</b><span>㎡</span></div><div><b>${escapeHtml(property.floor)}</b><span>募集階</span></div><div><b>${escapeHtml(property.rent)}</b><span>賃料</span></div></div><dl><div><dt>募集用途</dt><dd>${escapeHtml(property.type)}</dd></div><div><dt>構造・築年</dt><dd>${escapeHtml(property.structure)}</dd></div><div><dt>エレベーター</dt><dd>${escapeHtml(property.elevator)}</dd></div><div><dt>独立した2出口</dt><dd>${escapeHtml(property.exits)}</dd></div></dl><div class="assessment"><b>保育施設としての一次評価</b><p>${escapeHtml(property.reason)}</p></div><div class="contact"><b>問い合わせ先</b><p>${escapeHtml(details.company)}<br><strong>${escapeHtml(details.contact)}</strong></p></div><p class="evidence">確認メモ：${escapeHtml(property.evidence)}</p>${actionPanel(property)}<div class="card-foot"><span>${escapeHtml(property.published)}</span><a class="source-button" href="${details.url}" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">元の物件詳細・問い合わせ（新しいタブ） ↗</a></div></article>`;
 }
 
 function render() {
   const query = $("#search").value.trim().toLowerCase();
   const station = $("#station").value;
   const fit = $("#fit").value;
+  const operationStatus = $("#operationStatus").value;
   const groundOnly = $("#ground").checked;
-  const results = properties.filter((property) => (!query || JSON.stringify(property).toLowerCase().includes(query)) && (!station || property.station === station) && (!fit || property.fit === fit) && (!groundOnly || property.floor.startsWith("1階")));
+  const results = properties.filter((property) => (!query || JSON.stringify(property).toLowerCase().includes(query)) && (!station || property.station === station) && (!fit || property.fit === fit) && (!operationStatus || (actions[property.id]?.status || "未確認") === operationStatus) && (!groundOnly || property.floor.startsWith("1階")));
   $("#cards").innerHTML = results.map(createCard).join("");
   $("#resultCount").textContent = results.length;
   $("#empty").hidden = results.length !== 0;
   $("#summary").innerHTML = `<b>${results.length} / ${properties.length}件を表示</b><span>主要確認媒体：at home（直接検索・転載掲載を区別）、LIFULL HOME'S、飲食店ドットコム、オフィス系媒体。該当なしは「物件なし」ではなく継続調査対象です。</span>`;
 }
 
-document.querySelectorAll("input, select").forEach((element) => element.addEventListener("input", render));
+["search", "station", "fit", "operationStatus", "ground"].forEach((id) => $("#" + id).addEventListener("input", render));
+$("#cards").addEventListener("click", (event) => {
+  const panel = event.target.closest(".action-panel");
+  if (!panel) return;
+  const id = panel.dataset.propertyId;
+  actions[id] ||= {status:"未確認", note:""};
+  if (event.target.dataset.action === "status") {
+    actions[id].status = event.target.dataset.value; saveActions();
+    panel.querySelectorAll(".status-button").forEach((button) => button.classList.toggle("active", button === event.target));
+    panel.querySelector(".save-message").textContent = "状況を保存しました";
+  } else if (event.target.dataset.action === "save") {
+    actions[id].note = panel.querySelector('[data-action="note"]').value.trim(); saveActions();
+    panel.querySelector(".save-message").textContent = "メモを保存しました";
+  } else if (event.target.dataset.action === "clear") {
+    delete actions[id]; saveActions(); render();
+  }
+});
+$("#cards").addEventListener("change", (event) => {
+  if (event.target.dataset.action !== "preset" || !event.target.value) return;
+  const textarea = event.target.closest(".action-panel").querySelector('[data-action="note"]');
+  textarea.value = textarea.value ? `${textarea.value}\n${event.target.value}` : event.target.value;
+  event.target.value = ""; textarea.focus();
+});
 render();
