@@ -2,8 +2,12 @@ const $ = (selector) => document.querySelector(selector);
 const properties = window.PROPERTIES;
 const stations = ["高田馬場", "新宿", "西新宿", "大久保", "新大久保", "早稲田", "池袋"];
 const storageKey = "nestTokyoPropertyActionsV1";
-const statuses = ["未確認", "優先", "問い合わせ予定", "問い合わせ済", "内見予定", "保留", "対象外"];
-const notePresets = ["", "保育用途を確認", "2方向避難を確認", "エレベーターを確認", "図面・消防設備を確認", "賃料条件を確認", "内見を手配", "担当者へ再連絡"];
+const statuses = ["未確認", "要確認", "問い合わせ中", "内見予定", "有力候補", "対象外", "募集終了"];
+const reasons = {
+  "要確認":["保育用途", "2方向避難", "エレベーター", "消防・建築条件", "その他"],
+  "対象外":["保育用途不可", "避難条件", "賃料が高い", "立地・周辺環境", "面積・間取り", "その他"],
+  "募集終了":["成約済み", "募集停止", "掲載終了", "不動産会社に確認済み", "その他"]
+};
 let actions = loadActions();
 
 const contactDetails = {
@@ -34,10 +38,16 @@ function loadActions() {
 function saveActions() { localStorage.setItem(storageKey, JSON.stringify(actions)); }
 
 function actionPanel(property) {
-  const saved = actions[property.id] || {status:"未確認", note:""};
-  const buttons = statuses.map((value) => `<button type="button" class="status-button ${saved.status === value ? "active" : ""}" data-action="status" data-value="${escapeHtml(value)}">${escapeHtml(value)}</button>`).join("");
-  const options = notePresets.map((note) => `<option value="${escapeHtml(note)}">${note ? escapeHtml(note) : "よく使うメモを選択"}</option>`).join("");
-  return `<section class="action-panel" data-property-id="${escapeHtml(property.id)}"><div class="action-title"><b>対応状況・メモ</b><span>この端末のブラウザに保存</span></div><div class="status-buttons">${buttons}</div><label class="note-label">メモ候補<select data-action="preset">${options}</select></label><textarea data-action="note" rows="3" placeholder="自由にメモを入力できます">${escapeHtml(saved.note || "")}</textarea><div class="action-footer"><span class="save-message" aria-live="polite"></span><button type="button" class="save-button" data-action="save">メモを保存</button><button type="button" class="clear-button" data-action="clear">リセット</button></div></section>`;
+  const saved = {...{status:"未確認", reason:"", visitDate:"", assignee:"", note:""}, ...(actions[property.id] || {})};
+  const statusOptions = statuses.map((value) => `<option ${saved.status === value ? "selected" : ""}>${escapeHtml(value)}</option>`).join("");
+  const summaryParts = [saved.visitDate && `内見：${saved.visitDate.replace("T", " ")}`, saved.reason, saved.note].filter(Boolean);
+  const reasonGroups = Object.entries(reasons).map(([status, values]) => `<label class="conditional-field" data-show-for="${status}">理由・確認項目<select data-field="reason"><option value="">選択してください</option>${values.map((value) => `<option ${saved.reason === value ? "selected" : ""}>${escapeHtml(value)}</option>`).join("")}</select></label>`).join("");
+  return `<section class="action-panel compact" data-property-id="${escapeHtml(property.id)}"><div class="action-summary"><div><span class="current-status status-${escapeHtml(saved.status)}">${escapeHtml(saved.status)}</span><span class="summary-text">${escapeHtml(summaryParts.join(" ／ ") || "メモはありません")}</span></div><button type="button" class="edit-button" data-action="edit">編集</button></div><div class="action-editor" hidden><label>対応状況<select data-field="status">${statusOptions}</select></label>${reasonGroups}<div class="visit-fields" data-show-for="内見予定"><label>内見日時<input type="datetime-local" data-field="visitDate" value="${escapeHtml(saved.visitDate)}"></label><label>担当者<input type="text" data-field="assignee" value="${escapeHtml(saved.assignee)}" placeholder="会社名・担当者名"></label></div><label>メモ<textarea data-field="note" rows="3" placeholder="連絡内容、内見時の確認事項、不適合理由など">${escapeHtml(saved.note)}</textarea></label><div class="action-footer"><span class="save-message" aria-live="polite"></span><button type="button" class="save-button" data-action="save">保存</button><button type="button" class="cancel-button" data-action="cancel">閉じる</button><button type="button" class="clear-button" data-action="clear">リセット</button></div></div></section>`;
+}
+
+function updateConditionalFields(panel) {
+  const status = panel.querySelector('[data-field="status"]').value;
+  panel.querySelectorAll("[data-show-for]").forEach((field) => { field.hidden = field.dataset.showFor !== status; });
 }
 
 function createCard(property, index) {
@@ -63,22 +73,21 @@ $("#cards").addEventListener("click", (event) => {
   const panel = event.target.closest(".action-panel");
   if (!panel) return;
   const id = panel.dataset.propertyId;
-  actions[id] ||= {status:"未確認", note:""};
-  if (event.target.dataset.action === "status") {
-    actions[id].status = event.target.dataset.value; saveActions();
-    panel.querySelectorAll(".status-button").forEach((button) => button.classList.toggle("active", button === event.target));
-    panel.querySelector(".save-message").textContent = "状況を保存しました";
+  if (event.target.dataset.action === "edit") {
+    panel.querySelector(".action-editor").hidden = false; updateConditionalFields(panel);
+  } else if (event.target.dataset.action === "cancel") {
+    panel.querySelector(".action-editor").hidden = true;
   } else if (event.target.dataset.action === "save") {
-    actions[id].note = panel.querySelector('[data-action="note"]').value.trim(); saveActions();
-    panel.querySelector(".save-message").textContent = "メモを保存しました";
+    const value = (field) => panel.querySelector(`[data-field="${field}"]`)?.value.trim() || "";
+    const status = value("status");
+    const visibleReason = panel.querySelector(`[data-show-for="${status}"] [data-field="reason"]`);
+    actions[id] = {status, reason:visibleReason?.value || "", visitDate:value("visitDate"), assignee:value("assignee"), note:value("note")};
+    saveActions(); render();
   } else if (event.target.dataset.action === "clear") {
     delete actions[id]; saveActions(); render();
   }
 });
 $("#cards").addEventListener("change", (event) => {
-  if (event.target.dataset.action !== "preset" || !event.target.value) return;
-  const textarea = event.target.closest(".action-panel").querySelector('[data-action="note"]');
-  textarea.value = textarea.value ? `${textarea.value}\n${event.target.value}` : event.target.value;
-  event.target.value = ""; textarea.focus();
+  if (event.target.dataset.field === "status") updateConditionalFields(event.target.closest(".action-panel"));
 });
 render();
