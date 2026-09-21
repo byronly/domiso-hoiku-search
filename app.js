@@ -13,7 +13,10 @@ const contactDetails = {
   "kabukicho-2f": {building:"ソシアルビル（正式名は要問い合わせ）", url:"https://bk-sagasa-nt.com/tokyo/properties/8247/", company:"ぶけなび掲載取扱会社", contact:"詳細ページから物件ID 8247を伝えて問い合わせ"},
   "tk-shintoshin-2f": {building:"TK新都心ビル", url:"https://www.officetar.jp/building/2220/150730/", company:"株式会社スリースター", contact:"0120-733-383（平日9:30〜18:00）／物件No.002220"},
   "minami-ikebukuro-1f": {building:"池袋第一生命ビルディング", url:"https://mapfan.com/realestate/details/69ba21ba020c0805a5fa1eea", company:"株式会社バイオンマネジメント", contact:"03-5985-4521／物件番号 6989968754"},
-  "ikebukuro-first": {building:"池袋ファーストビル", url:"https://tempoly.jp/property/O-1031432911-3", company:"TEMPOLY掲載窓口", contact:"03-5457-7825（平日10:00〜18:00）／物件番号 O-1031432911-3"}
+  "ikebukuro-first": {building:"池袋ファーストビル", url:"https://tempoly.jp/property/O-1031432911-3", company:"TEMPOLY掲載窓口", contact:"03-5457-7825（平日10:00〜18:00）／物件番号 O-1031432911-3"},
+  "homes-takadanobaba-2f": {building:"ビル名は掲載会社へ要確認", url:"https://www.homes.co.jp/chintai/b-1457150042363/", company:"株式会社エステートエージェンシー 東京支店", contact:"0037-633-10228／問い合わせ番号 401469／物件番号 0145715-0042363"},
+  "homes-takadanobaba-1f": {building:"ビル名は掲載会社へ要確認", url:"https://www.homes.co.jp/chintai/b-1457150043147/", company:"株式会社エステートエージェンシー 東京支店", contact:"0037-633-10228／問い合わせ番号 058152／物件番号 0145715-0043147"},
+  "homes-carmel-103": {building:"カーメルI", url:"https://www.homes.co.jp/chintai/b-1577540000026/", company:"株式会社TFC", contact:"LIFULL HOME'S物件詳細の問い合わせフォームから、物件番号 0157754-0000026を伝えて確認"}
 };
 
 stations.forEach((station) => $("#station").insertAdjacentHTML("beforeend", `<option>${station}</option>`));
@@ -34,7 +37,7 @@ function render() {
   $("#cards").innerHTML = results.map(createCard).join("");
   $("#resultCount").textContent = results.length;
   $("#empty").hidden = results.length !== 0;
-  $("#summary").innerHTML = `<b>${results.length} / ${properties.length}件を表示</b><span>早稲田・西新宿では、今回の公開検索で全条件を確認できる募集中区画を特定できませんでした。該当なしではなく、継続調査対象です。</span>`;
+  $("#summary").innerHTML = `<b>${results.length} / ${properties.length}件を表示</b><span>主要確認媒体：at home（直接検索・転載掲載を区別）、LIFULL HOME'S、飲食店ドットコム、オフィス系媒体。該当なしは「物件なし」ではなく継続調査対象です。</span>`;
 }
 
 document.querySelectorAll("input, select").forEach((element) => element.addEventListener("input", render));
