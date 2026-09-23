@@ -2,3 +2,5 @@
 
 /* 公開情報の掲載状況。本文の文字サイズは変更しません。 */
 .listing-status{padding:10px 12px;margin:14px 0;border-left:3px solid #73877c;background:#f3f6f3;line-height:1.6}.listing-status p{margin:4px 0}.listing-status span{color:var(--muted)}.listing-ended,.listing-restricted{border-color:#9b624c;background:#faf0e9}.listing-pending,.listing-unverified{border-color:#aa8a40;background:#faf7ed}.badge.inactive,.badge.restricted{background:#efe4df;color:#764632}.card-foot{gap:16px;flex-wrap:wrap}.card-foot>span{max-width:100%;overflow-wrap:anywhere}
+/* 注意書きの各段落を本文列に揃えます。 */
+.notice>p{grid-column:2}.notice>b{grid-column:1;grid-row:1 / span 3}@media(max-width:820px){.notice>p,.notice>b{grid-column:1;grid-row:auto}}
