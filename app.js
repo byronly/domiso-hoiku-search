@@ -2,6 +2,8 @@ const $ = (selector) => document.querySelector(selector);
 const properties = window.PROPERTIES;
 const stations = ["高田馬場", "新宿", "西新宿", "大久保", "新大久保", "早稲田", "池袋"];
 const storageKey = "nestTokyoPropertyActionsV1";
+// 掲載状況は公開情報の確認結果であり、担当者の対応状況とは分けます。
+const listingLabels = {listed:"掲載を確認", unverified:"要再確認", pending:"内定（受付可否を要確認）", ended:"募集・掲載終了", restricted:"掲載中・保育用途の取扱制限"};
 const statuses = ["未確認", "要確認", "問い合わせ中", "内見予定", "有力候補", "対象外", "募集終了"];
 const reasons = {
   "要確認":["保育用途", "2方向避難", "エレベーター", "消防・建築条件", "その他"],
@@ -51,8 +53,21 @@ function updateConditionalFields(panel) {
 }
 
 function createCard(property, index) {
-  const details = contactDetails[property.id];
-  return `<article class="card" style="--delay:${index * 35}ms"><div class="card-top"><span class="index">${String(index + 1).padStart(2, "0")}</span><span class="badge ${property.fit}">${escapeHtml(property.fitLabel)}</span></div><h2>${escapeHtml(details.building)}</h2><p class="unit">${escapeHtml(property.name)}</p><p class="location">${escapeHtml(property.station)}駅・徒歩${property.walk}分　${escapeHtml(property.address)}</p><div class="key"><div><b>${property.area}</b><span>㎡</span></div><div><b>${escapeHtml(property.floor)}</b><span>募集階</span></div><div><b>${escapeHtml(property.rent)}</b><span>賃料</span></div></div><dl><div><dt>募集用途</dt><dd>${escapeHtml(property.type)}</dd></div><div><dt>構造・築年</dt><dd>${escapeHtml(property.structure)}</dd></div><div><dt>エレベーター</dt><dd>${escapeHtml(property.elevator)}</dd></div><div><dt>独立した2出口</dt><dd>${escapeHtml(property.exits)}</dd></div></dl><div class="assessment"><b>保育施設としての一次評価</b><p>${escapeHtml(property.reason)}</p></div><div class="contact"><b>問い合わせ先</b><p>${escapeHtml(details.company)}<br><strong>${escapeHtml(details.contact)}</strong></p></div><p class="evidence">確認メモ：${escapeHtml(property.evidence)}</p>${actionPanel(property)}<div class="card-foot"><span>${escapeHtml(property.published)}</span><a class="source-button" href="${details.url}" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">元の物件詳細・問い合わせ（新しいタブ） ↗</a></div></article>`;
+  const details = property.contact || contactDetails[property.id];
+  const state = property.listingState || "unverified";
+  const related = property.relatedSource ? `<p><a href="${escapeHtml(property.relatedSource.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(property.relatedSource.label)} ↗</a></p>` : "";
+  return `<article class="card" style="--delay:${index * 35}ms">
+    <div class="card-top"><span class="index">${String(index + 1).padStart(2, "0")}</span><span class="badge ${escapeHtml(property.fit)}">${escapeHtml(property.fitLabel)}</span></div>
+    <h2>${escapeHtml(details.building)}</h2><p class="unit">${escapeHtml(property.name)}</p>
+    <p class="location">${escapeHtml(property.station)}駅・徒歩${property.walk}分　${escapeHtml(property.address)}</p>
+    <div class="listing-status listing-${escapeHtml(state)}"><b>掲載状況：${escapeHtml(listingLabels[state])}</b><p>${escapeHtml(property.listingNote || "不明")}</p><span>当サイトの確認日：${escapeHtml(property.checkedAt || "不明")}（JST）</span></div>
+    <div class="key"><div><b>${property.area}</b><span>㎡</span></div><div><b>${escapeHtml(property.floor)}</b><span>募集階</span></div><div><b>${escapeHtml(property.rent)}</b><span>賃料</span></div></div>
+    <dl><div><dt>募集用途</dt><dd>${escapeHtml(property.type)}</dd></div><div><dt>構造・築年</dt><dd>${escapeHtml(property.structure)}</dd></div><div><dt>エレベーター</dt><dd>${escapeHtml(property.elevator)}</dd></div><div><dt>独立した2出口</dt><dd>${escapeHtml(property.exits)}</dd></div></dl>
+    <div class="assessment"><b>保育施設としての一次評価</b><p>${escapeHtml(property.reason)}</p></div>
+    <div class="contact"><b>問い合わせ先</b><p>${escapeHtml(details.company)}<br><strong>${escapeHtml(details.contact)}</strong></p></div>
+    <p class="evidence">確認メモ：${escapeHtml(property.evidence)}</p>${related}${actionPanel(property)}
+    <div class="card-foot"><span>${escapeHtml(property.published)}<br>情報元：${escapeHtml(property.sourceName)}</span><a class="source-button" href="${escapeHtml(details.url)}" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">元の物件詳細・問い合わせ（新しいタブ） ↗</a></div>
+  </article>`;
 }
 
 function render() {
@@ -61,14 +76,16 @@ function render() {
   const fit = $("#fit").value;
   const operationStatus = $("#operationStatus").value;
   const groundOnly = $("#ground").checked;
-  const results = properties.filter((property) => (!query || JSON.stringify(property).toLowerCase().includes(query)) && (!station || property.station === station) && (!fit || property.fit === fit) && (!operationStatus || (actions[property.id]?.status || "未確認") === operationStatus) && (!groundOnly || property.floor.startsWith("1階")));
+  const listing = $("#listing").value;
+  const results = properties.filter((property) => (!query || JSON.stringify(property).toLowerCase().includes(query)) && (!station || property.station === station || property.access?.some((item) => item.station === station && item.walk <= 13)) && (!fit || property.fit === fit) && (!operationStatus || (actions[property.id]?.status || "未確認") === operationStatus) && (!groundOnly || property.floor.startsWith("1階")) && (!listing || (listing === "open" ? property.listingState !== "ended" : property.listingState === listing)));
   $("#cards").innerHTML = results.map(createCard).join("");
   $("#resultCount").textContent = results.length;
   $("#empty").hidden = results.length !== 0;
-  $("#summary").innerHTML = `<b>${results.length} / ${properties.length}件を表示</b><span>主要確認媒体：at home（直接検索・転載掲載を区別）、LIFULL HOME'S、飲食店ドットコム、オフィス系媒体。該当なしは「物件なし」ではなく継続調査対象です。</span>`;
+  const count = (state) => properties.filter((property) => property.listingState === state).length;
+  $("#summary").innerHTML = `<b>${results.length} / ${properties.length}件を表示</b><span>全記録：掲載確認 ${count("listed")}件／要再確認 ${count("unverified")}件／内定 ${count("pending")}件／終了 ${count("ended")}件／保育用途の取扱制限 ${count("restricted")}件。掲載確認は空室保証ではありません。</span>`;
 }
 
-["search", "station", "fit", "operationStatus", "ground"].forEach((id) => $("#" + id).addEventListener("input", render));
+["search", "station", "fit", "operationStatus", "ground", "listing"].forEach((id) => $("#" + id).addEventListener("input", render));
 $("#cards").addEventListener("click", (event) => {
   const panel = event.target.closest(".action-panel");
   if (!panel) return;
