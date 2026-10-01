@@ -667,5 +667,70 @@ window.PROPERTIES = [
       "company": "東京支店 株式会社エステートエージェンシー",
       "contact": "0037-633-10228／問い合わせ番号875908（営業時間9:00〜18:00、土日祝休）"
     }
+  },
+  {
+    "id": "homes-higashiikebukuro-3f",
+    "name": "東池袋ビル 3F",
+    "station": "池袋",
+    "walk": 11,
+    "address": "東京都豊島区東池袋4丁目3-3",
+    "type": "貸店舗・事務所",
+    "area": 64.77,
+    "floor": "3階 / 9階建",
+    "rent": "44万円 / 月（管理費33,000円・税区分要確認）",
+    "structure": "鉄骨造・2023年2月",
+    "elevator": "有（転載情報・要再確認）",
+    "exits": "不明",
+    "published": "公開2026-07-16／転載情報更新2026-08-18",
+    "fit": "review",
+    "fitLabel": "要重点確認",
+    "reason": "検索条件内ですが、3階の幼児避難、独立した2出口、保育用途の承諾、実効保育面積、定期借家2年の継続性を重点確認。行政・建築・消防上の確認ではありません。",
+    "source": "https://www.homes.co.jp/chintai/b-1162050021282/",
+    "sourceName": "LIFULL HOME'S／goo住宅・不動産（転載）",
+    "evidence": "旧検索記録と転載情報に64.77㎡・44万円・3階の記載。原掲載の詳細を今回は取得できず、現在の募集条件は未確認。",
+    "checkedAt": "2026-09-30",
+    "listingState": "unverified",
+    "listingNote": "原掲載詳細を取得できず、転載情報の更新日も古いため要再確認。内定の確認はありません。",
+    "relatedSource": {
+      "url": "https://house.goo.ne.jp/rent/bb/detail/4/13116/1162050021282/116205/x41162050021282.html",
+      "label": "条件・問い合わせ先の転載情報"
+    },
+    "contact": {
+      "building": "東池袋ビル",
+      "url": "https://www.homes.co.jp/chintai/b-1162050021282/",
+      "company": "株式会社サンライズ（転載情報）",
+      "contact": "03-3356-1101／管理コード21282（受付状況を要確認）"
+    }
+  },
+  {
+    "id": "homes-meisho-mg-3f",
+    "name": "明昌ＭＧビル 3階",
+    "station": "池袋",
+    "walk": 8,
+    "address": "東京都豊島区東池袋3-9-9",
+    "type": "貸事務所",
+    "area": 72.04,
+    "floor": "3階 / 10階建",
+    "rent": "28.34万円 / 月（税別・共益費5.26万円税別）",
+    "structure": "SRC（一部S造）・1987年9月・新耐震",
+    "elevator": "有（1基、掲載情報）",
+    "exits": "不明",
+    "published": "媒体更新2026-04-22（取得情報）",
+    "fit": "review",
+    "fitLabel": "要重点確認",
+    "reason": "検索条件内ですが、事務所から保育用途への転用承諾、3階の幼児避難、独立した2出口、防火区画、採光換気、児童用設備を重点確認。行政・建築・消防上の確認ではありません。",
+    "source": "https://www.builbank-r.com/tokyo/t109072/",
+    "sourceName": "ビルバンク",
+    "evidence": "掲載に募集中1区画・3階72.04㎡・税別賃料283,400円・共益費52,600円・即日入居可と表示。媒体更新日は4月で、現在の空室は不動産会社に要確認。",
+    "checkedAt": "2026-09-30",
+    "listingState": "unverified",
+    "listingNote": "公開掲載は確認できるが更新日が古いため、募集継続・保育用途を問い合わせて確認。",
+    "contact": {
+      "building": "明昌ＭＧビル",
+      "url": "https://www.builbank-r.com/tokyo/t109072/",
+      "company": "株式会社ビルバンク",
+      "contact": "0120-95-3737／物件番号B2001P（平日9:00〜17:30）"
+    }
   }
 ];
+
