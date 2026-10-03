@@ -731,6 +731,73 @@ window.PROPERTIES = [
       "company": "株式会社ビルバンク",
       "contact": "0120-95-3737／物件番号B2001P（平日9:00〜17:30）"
     }
+  },
+  {
+    "id": "homes-onkyo-amour-3f",
+    "name": "恩京アムールビル 3階",
+    "station": "池袋",
+    "walk": 4,
+    "address": "東京都豊島区池袋2丁目48-9",
+    "type": "貸事務所（店舗利用は要相談）",
+    "area": 80.87,
+    "floor": "3階 / 9階建",
+    "rent": "39.6万円 / 月（税込、管理費3.3万円）",
+    "structure": "RC・2013年3月竣工",
+    "elevator": "有",
+    "exits": "不明",
+    "published": "ちいきぼオフィス最終更新 2026-10-01",
+    "fit": "review",
+    "fitLabel": "要重点確認",
+    "reason": "80.87㎡・3階・エレベーター有。ただし事務所募集で、保育用途の可否、独立した2方向避難、階段・消防設備、採光・換気・園児用設備と屋外活動場所は不明。行政・建築・消防の確認ではない。",
+    "source": "https://www.chiikibo.com/estates/6881/",
+    "sourceName": "ちいきぼオフィス（2026-10-01更新）",
+    "evidence": "同一の80.87㎡・3階区画はLIFULL HOME'Sにも掲載。空室は仲介会社への確認が必要。",
+    "checkedAt": "2026-10-03",
+    "listingState": "listed",
+    "listingNote": "2026-10-03に募集ページを確認。掲載継続は空室・保育用途許可を保証しない。",
+    "relatedSource": {
+      "url": "https://www.homes.co.jp/chintai/b-1238310163355/",
+      "label": "LIFULL HOME'Sの同一区画"
+    },
+    "contact": {
+      "building": "恩京アムールビル",
+      "url": "https://www.chiikibo.com/estates/6881/",
+      "company": "株式会社セーフティーイノベーション（ちいきぼオフィス）",
+      "contact": "0120-66-7102（平日10:00～18:00）。物件No.12610-0008を伝える。"
+    }
+  },
+  {
+    "id": "athome-sekiguchi-copo-1-2f",
+    "name": "関口コーポ 1～2階",
+    "station": "池袋",
+    "walk": 8,
+    "address": "東京都豊島区池袋2丁目（番地非公開）",
+    "type": "貸店舗・事務所",
+    "area": 91.85,
+    "floor": "1～2階 / 3階建",
+    "rent": "30.25万円 / 月（管理費なし）",
+    "structure": "鉄骨造・1992年4月築",
+    "elevator": "不明",
+    "exits": "不明",
+    "published": "at home情報公開 2026-06-23／次回更新予定 2026-10-16",
+    "fit": "inactive",
+    "fitLabel": "保育用途は難しい可能性",
+    "reason": "面積・徒歩・階数は検索条件内。ただし募集条件は来客数の多い店舗を制限し、消防点検なし・検査済証なしと明記。保育用途は貸主の許可、用途変更の可否、避難経路・消防設備等を契約前に確認する必要があり、現時点では候補として推奨しにくい。行政確認ではない。",
+    "source": "https://nifty.athome.co.jp/bkdtl?ART=03&BUKKEN=6988247113&ITEM=jr",
+    "sourceName": "at home掲載ページ",
+    "evidence": "at home側は91.85㎡・1～2階。goo転載ページは89.94㎡・1階と相違するため、図面と専有面積を仲介会社に要確認。",
+    "checkedAt": "2026-10-03",
+    "listingState": "restricted",
+    "listingNote": "2026-10-03に掲載情報を確認。来客数の多い業種への制限および検査済証なしの記載あり。保育用途の可否は未確認。",
+    "relatedSource": {
+      "url": "https://house.goo.ne.jp/rent/bb/detail/0/13116/6988247113/00281008/x06988247113.html",
+      "label": "goo住宅・不動産の転載（面積・階数に相違）"
+    },
+    "contact": {
+      "building": "関口コーポ",
+      "url": "https://nifty.athome.co.jp/bkdtl?ART=03&BUKKEN=6988247113&ITEM=jr",
+      "company": "株式会社エムエス不動産",
+      "contact": "03-4413-1274。at home物件番号6988247113を伝える。"
+    }
   }
 ];
-
