@@ -1,6 +1,6 @@
 const $ = (selector) => document.querySelector(selector);
 const properties = window.PROPERTIES;
-const stations = ["高田馬場", "新宿", "西新宿", "大久保", "新大久保", "早稲田", "池袋"];
+const stations = ["高田馬場", "新宿", "西新宿", "大久保", "新大久保", "早稲田", "池袋", "目白"];
 const storageKey = "nestTokyoPropertyActionsV1";
 // 掲載状況は公開情報の確認結果であり、担当者の対応状況とは分けます。
 const listingLabels = {listed:"掲載を確認", unverified:"要再確認", pending:"内定（受付可否を要確認）", ended:"募集・掲載終了", restricted:"掲載中・保育用途の取扱制限"};

@@ -1201,7 +1201,12 @@ window.PROPERTIES = [
     "name": "大久保1丁目・カラオケ居抜き店舗（3階）",
     "station": "新大久保",
     "walk": 7,
-    "access": [{"station":"大久保","walk":6}],
+    "access": [
+      {
+        "station": "大久保",
+        "walk": 6
+      }
+    ],
     "address": "東京都新宿区大久保1丁目（番地非公開）",
     "type": "貸店舗・カラオケ居抜き",
     "area": 105.22,
@@ -1232,7 +1237,16 @@ window.PROPERTIES = [
     "name": "アルマビル 2階",
     "station": "大久保",
     "walk": 4,
-    "access": [{"station":"新大久保","walk":9},{"station":"西新宿","walk":10}],
+    "access": [
+      {
+        "station": "新大久保",
+        "walk": 9
+      },
+      {
+        "station": "西新宿",
+        "walk": 10
+      }
+    ],
     "address": "東京都新宿区北新宿1-4-1",
     "type": "貸事務所",
     "area": 124.01,
@@ -1251,15 +1265,32 @@ window.PROPERTIES = [
     "checkedAt": "2026-10-18",
     "listingState": "restricted",
     "listingNote": "同一区画のHOME'S掲載で福祉関係不可・事務所以外不可と明記。募集終了ではないが、保育用途は制限あり。貸主への最終確認は未実施。",
-    "relatedSource": {"url":"https://www.homes.co.jp/chintai/b-1150050043538/","label":"HOME'Sの同一区画（用途制限の原掲載）"},
-    "contact": {"building":"アルマビル","url":"https://www.threewave.co.jp/detail/274/14","company":"株式会社スリーウェーブ","contact":"0120-16-2331（平日9:00〜19:00）または原掲載の問い合わせフォーム。物件番号274-00014・2階区画を伝える。"}
+    "relatedSource": {
+      "url": "https://www.homes.co.jp/chintai/b-1150050043538/",
+      "label": "HOME'Sの同一区画（用途制限の原掲載）"
+    },
+    "contact": {
+      "building": "アルマビル",
+      "url": "https://www.threewave.co.jp/detail/274/14",
+      "company": "株式会社スリーウェーブ",
+      "contact": "0120-16-2331（平日9:00〜19:00）または原掲載の問い合わせフォーム。物件番号274-00014・2階区画を伝える。"
+    }
   },
   {
     "id": "threewave-alma-3f-274-00014",
     "name": "アルマビル 3階",
     "station": "大久保",
     "walk": 4,
-    "access": [{"station":"新大久保","walk":9},{"station":"西新宿","walk":10}],
+    "access": [
+      {
+        "station": "新大久保",
+        "walk": 9
+      },
+      {
+        "station": "西新宿",
+        "walk": 10
+      }
+    ],
     "address": "東京都新宿区北新宿1-4-1",
     "type": "貸事務所",
     "area": 124.01,
@@ -1278,15 +1309,32 @@ window.PROPERTIES = [
     "checkedAt": "2026-10-18",
     "listingState": "listed",
     "listingNote": "HOME'S同一区画の掲載を確認。各種学校NGの注記あり。保育施設への適用・募集継続は仲介会社未確認。",
-    "relatedSource": {"url":"https://www.homes.co.jp/chintai/b-1310370030067/","label":"HOME'Sの同一区画（学校用途の制限）"},
-    "contact": {"building":"アルマビル","url":"https://www.threewave.co.jp/detail/274/14","company":"株式会社スリーウェーブ","contact":"0120-16-2331（平日9:00〜19:00）または原掲載の問い合わせフォーム。物件番号274-00014・3階区画を伝える。"}
+    "relatedSource": {
+      "url": "https://www.homes.co.jp/chintai/b-1310370030067/",
+      "label": "HOME'Sの同一区画（学校用途の制限）"
+    },
+    "contact": {
+      "building": "アルマビル",
+      "url": "https://www.threewave.co.jp/detail/274/14",
+      "company": "株式会社スリーウェーブ",
+      "contact": "0120-16-2331（平日9:00〜19:00）または原掲載の問い合わせフォーム。物件番号274-00014・3階区画を伝える。"
+    }
   },
   {
     "id": "threewave-ys-daiichi-3f-237-00544",
     "name": "ＹＳ第１ビル 3階",
     "station": "新宿",
     "walk": 6,
-    "access": [{"station":"西新宿","walk":8},{"station":"大久保","walk":8}],
+    "access": [
+      {
+        "station": "西新宿",
+        "walk": 8
+      },
+      {
+        "station": "大久保",
+        "walk": 8
+      }
+    ],
     "address": "東京都新宿区西新宿7-15-4",
     "type": "貸事務所",
     "area": 128.83,
@@ -1305,14 +1353,24 @@ window.PROPERTIES = [
     "checkedAt": "2026-10-17",
     "listingState": "listed",
     "listingNote": "原掲載に募集区画として表示。募集継続・空室・保育用途は仲介会社未確認。",
-    "contact": {"building":"ＹＳ第１ビル","url":"https://www.threewave.co.jp/detail/237/544","company":"株式会社スリーウェーブ","contact":"0120-16-2331（平日9:00〜19:00）または原掲載の問い合わせフォーム。物件番号237-00544・3階38.97坪区画を伝える。"}
+    "contact": {
+      "building": "ＹＳ第１ビル",
+      "url": "https://www.threewave.co.jp/detail/237/544",
+      "company": "株式会社スリーウェーブ",
+      "contact": "0120-16-2331（平日9:00〜19:00）または原掲載の問い合わせフォーム。物件番号237-00544・3階38.97坪区画を伝える。"
+    }
   },
   {
     "id": "threewave-hinode-3f-237-00245",
     "name": "ヒノデビル 3階",
     "station": "新宿",
     "walk": 4,
-    "access": [{"station":"大久保","walk":8}],
+    "access": [
+      {
+        "station": "大久保",
+        "walk": 8
+      }
+    ],
     "address": "東京都新宿区西新宿7-1-8",
     "type": "貸事務所",
     "area": 200.17,
@@ -1331,14 +1389,24 @@ window.PROPERTIES = [
     "checkedAt": "2026-10-17",
     "listingState": "listed",
     "listingNote": "原掲載に募集区画として表示。募集継続・空室・保育用途は仲介会社未確認。",
-    "contact": {"building":"ヒノデビル","url":"https://www.threewave.co.jp/detail/237/245","company":"株式会社スリーウェーブ","contact":"0120-16-2331（平日9:00〜19:00）または原掲載の問い合わせフォーム。物件番号237-00245・3階60.55坪区画を伝える。"}
+    "contact": {
+      "building": "ヒノデビル",
+      "url": "https://www.threewave.co.jp/detail/237/245",
+      "company": "株式会社スリーウェーブ",
+      "contact": "0120-16-2331（平日9:00〜19:00）または原掲載の問い合わせフォーム。物件番号237-00245・3階60.55坪区画を伝える。"
+    }
   },
   {
     "id": "threewave-route-2f-268-00089",
     "name": "ルートビル 2階",
     "station": "新大久保",
     "walk": 1,
-    "access": [{"station":"大久保","walk":4}],
+    "access": [
+      {
+        "station": "大久保",
+        "walk": 4
+      }
+    ],
     "address": "東京都新宿区百人町1-11-19",
     "type": "貸事務所",
     "area": 121.39,
@@ -1357,14 +1425,24 @@ window.PROPERTIES = [
     "checkedAt": "2026-10-17",
     "listingState": "listed",
     "listingNote": "原掲載に募集区画として表示。募集継続・空室・保育用途は仲介会社未確認。",
-    "contact": {"building":"ルートビル","url":"https://www.threewave.co.jp/detail/268/89","company":"株式会社スリーウェーブ","contact":"0120-16-2331（平日9:00〜19:00）または原掲載の問い合わせフォーム。物件番号268-00089・2階区画を伝える。"}
+    "contact": {
+      "building": "ルートビル",
+      "url": "https://www.threewave.co.jp/detail/268/89",
+      "company": "株式会社スリーウェーブ",
+      "contact": "0120-16-2331（平日9:00〜19:00）または原掲載の問い合わせフォーム。物件番号268-00089・2階区画を伝える。"
+    }
   },
   {
     "id": "athome-metrocity-nishiwaseda-3f-6979870640",
     "name": "メトロシティ西早稲田ビル 3階",
     "station": "高田馬場",
     "walk": 10,
-    "access": [{"station":"西早稲田","walk":1}],
+    "access": [
+      {
+        "station": "西早稲田",
+        "walk": 1
+      }
+    ],
     "address": "東京都新宿区高田馬場1丁目（番地非公開）",
     "type": "貸店舗・事務所",
     "area": 124.77,
@@ -1380,17 +1458,27 @@ window.PROPERTIES = [
     "source": "https://www.athome.co.jp/rent_store/6979870640/",
     "sourceName": "at home（原掲載を直接確認）",
     "evidence": "東西線高田馬場駅徒歩10分、副都心線西早稲田駅徒歩1分。現況空・即時引渡し、スケルトン。クリニック不可の注記あり。保育用途は未記載。",
-    "checkedAt": "2026-10-21",
+    "checkedAt": "2026-10-25",
     "listingState": "listed",
-    "listingNote": "2026-10-21にat home原掲載を確認。次回更新予定日は11月4日に変更。現況は空と表示されるが、実際の募集継続・空室・保育用途は仲介会社未確認。",
-    "contact": {"building":"メトロシティ西早稲田ビル","url":"https://www.athome.co.jp/rent_store/6979870640/","company":"ACRE株式会社 首都圏中央グループ","contact":"03-5860-3660（平日9:30〜18:00）。物件番号6979870640・担当永川を伝える。原掲載の問い合わせフォームも利用可。"}
+    "listingNote": "2026-10-25にat home原掲載を表示確認。賃料・面積・階数と11月4日の次回更新予定日に変更は見られない。現況は空と表示されるが、実際の募集継続・空室・保育用途は仲介会社未確認。",
+    "contact": {
+      "building": "メトロシティ西早稲田ビル",
+      "url": "https://www.athome.co.jp/rent_store/6979870640/",
+      "company": "ACRE株式会社 首都圏中央グループ",
+      "contact": "03-5860-3660（平日9:30〜18:00）。物件番号6979870640・担当永川を伝える。原掲載の問い合わせフォームも利用可。"
+    }
   },
   {
     "id": "engine-terrace-traditional-arts-1f-12638",
     "name": "トラディショナル・アーツ・マンション 1階",
     "station": "池袋",
     "walk": 10,
-    "access": [{"station":"要町","walk":5}],
+    "access": [
+      {
+        "station": "要町",
+        "walk": 5
+      }
+    ],
     "address": "東京都豊島区西池袋5丁目21-7",
     "type": "貸店舗（一部）・各種サービス店舗相談可",
     "area": 101.32,
@@ -1409,14 +1497,28 @@ window.PROPERTIES = [
     "checkedAt": "2026-10-18",
     "listingState": "listed",
     "listingNote": "2026-10-18に原掲載を表示確認。募集終了の表示はないが、次回更新予定日が経過。空室・募集継続・保育用途は仲介会社未確認。",
-    "contact": {"building":"トラディショナル・アーツ・マンション","url":"https://e-terrace-kanda.jp/bukken/r/s/12638.html","company":"株式会社エンジンテラス","contact":"03-5953-2622。または原掲載の『お問い合わせ』から物件番号12638を伝える。"}
+    "contact": {
+      "building": "トラディショナル・アーツ・マンション",
+      "url": "https://e-terrace-kanda.jp/bukken/r/s/12638.html",
+      "company": "株式会社エンジンテラス",
+      "contact": "03-5953-2622。または原掲載の『お問い合わせ』から物件番号12638を伝える。"
+    }
   },
   {
     "id": "homes-takadanobaba3-store-office-2f-1298140008150",
     "name": "高田馬場3丁目・店舗事務所 2階（ビル名非公開）",
     "station": "高田馬場",
     "walk": 13,
-    "access": [{"station":"下落合","walk":7},{"station":"落合","walk":13}],
+    "access": [
+      {
+        "station": "下落合",
+        "walk": 7
+      },
+      {
+        "station": "落合",
+        "walk": 13
+      }
+    ],
     "address": "東京都新宿区高田馬場3丁目（番地非公開）",
     "type": "貸店舗・事務所（店舗業種要相談）",
     "area": 74.25,
@@ -1425,24 +1527,34 @@ window.PROPERTIES = [
     "structure": "鉄骨造・1997年3月築",
     "elevator": "無（HOME'S設備欄は非該当）",
     "exits": "不明",
-    "published": "HOME'S公開 2026-05-03／更新 2026-10-19／次回更新予定 2026-11-02",
+    "published": "HOME'S公開 2026-05-03／更新 2026-10-24／次回更新予定 2026-11-07",
     "fit": "review",
     "fitLabel": "要重点確認",
     "reason": "74.25㎡・2階で検索条件内だがエレベーターは非該当。保育用途の貸主承諾、独立した2出口・2方向避難、階段幅、送迎動線、児童用設備を確認。行政・建築・消防上の適合確認ではない。",
     "source": "https://www.homes.co.jp/chintai/b-1298140008150/",
     "sourceName": "LIFULL HOME'S（原掲載を直接確認）",
     "evidence": "高田馬場駅徒歩13分。現況空家・即時引渡しと表示される一方、備考には2026年7月31日空き予定の旧記載あり。ビル名・番地は公開ページで不明。保育用途可の記載なし。",
-    "checkedAt": "2026-10-19",
+    "checkedAt": "2026-10-25",
     "listingState": "listed",
-    "listingNote": "2026-10-19に原掲載を表示確認。現況・備考の相違、空室・保育用途は仲介会社に要確認。",
-    "contact": {"building":"不明（原掲載で非公開）","url":"https://www.homes.co.jp/chintai/b-1298140008150/","company":"株式会社吉住ホーム 中野坂上本店","contact":"0037-633-43715（通話無料、音声案内の問合せ番号374260）。HOME'S物件番号0129814-0008150・自社管理番号3202460を伝える。原掲載フォームも利用可。"}
+    "listingNote": "2026-10-25にHOME'S原掲載を表示確認。10月24日更新、現況は空家・即時と表示。一方、備考の2026年7月31日空き予定は旧記載のまま。実際の募集継続・保育用途は仲介会社に要確認。",
+    "contact": {
+      "building": "不明（原掲載で非公開）",
+      "url": "https://www.homes.co.jp/chintai/b-1298140008150/",
+      "company": "株式会社吉住ホーム 中野坂上本店",
+      "contact": "0037-633-43715（通話無料、音声案内の問合せ番号374260）。HOME'S物件番号0129814-0008150・自社管理番号3202460を伝える。原掲載フォームも利用可。"
+    }
   },
   {
     "id": "homes-takadanobaba1-office-2f-1388150007514",
     "name": "高田馬場1丁目・事務所 201号（ビル名非公開）",
     "station": "高田馬場",
     "walk": 5,
-    "access": [{"station":"西早稲田","walk":6}],
+    "access": [
+      {
+        "station": "西早稲田",
+        "walk": 6
+      }
+    ],
     "address": "東京都新宿区高田馬場1丁目（番地非公開）",
     "type": "貸事務所",
     "area": 559.21,
@@ -1461,7 +1573,12 @@ window.PROPERTIES = [
     "checkedAt": "2026-10-19",
     "listingState": "listed",
     "listingNote": "2026-10-19に原掲載を表示確認。現況が不明のため空室・引渡し・保育用途は仲介会社に要確認。",
-    "contact": {"building":"不明（原掲載で非公開）","url":"https://www.homes.co.jp/chintai/b-1388150007514/","company":"株式会社スリーウェーブ","contact":"0037-633-45197（通話無料、音声案内の問合せ番号279480）。HOME'S物件番号0138815-0007514・自社管理番号202-00036-013を伝える。原掲載フォームも利用可。"}
+    "contact": {
+      "building": "不明（原掲載で非公開）",
+      "url": "https://www.homes.co.jp/chintai/b-1388150007514/",
+      "company": "株式会社スリーウェーブ",
+      "contact": "0037-633-45197（通話無料、音声案内の問合せ番号279480）。HOME'S物件番号0138815-0007514・自社管理番号202-00036-013を伝える。原掲載フォームも利用可。"
+    }
   },
   {
     "id": "engine-terrace-kj-minamiikebukuro-3f-16378",
@@ -1486,7 +1603,12 @@ window.PROPERTIES = [
     "checkedAt": "2026-10-19",
     "listingState": "listed",
     "listingNote": "2026-10-19に原掲載を表示確認。空室・募集継続・保育用途は仲介会社未確認。",
-    "contact": {"building":"ＫＪ南池袋ビル","url":"https://e-terrace-kanda.jp/bukken/syousai/3/16378dat.html","company":"株式会社エンジンテラス 池袋店","contact":"03-5953-2622。または原掲載の『お問い合わせ』から物件番号16378・3階を伝える。"}
+    "contact": {
+      "building": "ＫＪ南池袋ビル",
+      "url": "https://e-terrace-kanda.jp/bukken/syousai/3/16378dat.html",
+      "company": "株式会社エンジンテラス 池袋店",
+      "contact": "03-5953-2622。または原掲載の『お問い合わせ』から物件番号16378・3階を伝える。"
+    }
   },
   {
     "id": "engine-terrace-hachidai-2f-17521",
@@ -1511,7 +1633,12 @@ window.PROPERTIES = [
     "checkedAt": "2026-10-19",
     "listingState": "listed",
     "listingNote": "2026-10-19に原掲載を表示確認。空室・募集継続・保育用途は仲介会社未確認。",
-    "contact": {"building":"八大ビル","url":"https://e-terrace-kanda.jp/bukken/syousai/3/17521dat.html","company":"株式会社エンジンテラス 池袋店","contact":"03-5953-2622。または原掲載の『お問い合わせ』から物件番号17521・2階を伝える。"}
+    "contact": {
+      "building": "八大ビル",
+      "url": "https://e-terrace-kanda.jp/bukken/syousai/3/17521dat.html",
+      "company": "株式会社エンジンテラス 池袋店",
+      "contact": "03-5953-2622。または原掲載の『お問い合わせ』から物件番号17521・2階を伝える。"
+    }
   },
   {
     "id": "engine-terrace-stella-1f-19679",
@@ -1536,7 +1663,12 @@ window.PROPERTIES = [
     "checkedAt": "2026-10-20",
     "listingState": "listed",
     "listingNote": "2026-10-20に原掲載を表示確認。掲載日・更新日、実際の空室・保育用途は仲介会社に要確認。",
-    "contact": {"building":"ステラビル","url":"https://e-terrace-kanda.jp/bukken/syousai/3/19679dat.html","company":"株式会社エンジンテラス 池袋店","contact":"03-5953-2622。物件番号19679・1階を伝える。"}
+    "contact": {
+      "building": "ステラビル",
+      "url": "https://e-terrace-kanda.jp/bukken/syousai/3/19679dat.html",
+      "company": "株式会社エンジンテラス 池袋店",
+      "contact": "03-5953-2622。物件番号19679・1階を伝える。"
+    }
   },
   {
     "id": "engine-terrace-keiai-1f-19740",
@@ -1561,7 +1693,12 @@ window.PROPERTIES = [
     "checkedAt": "2026-10-20",
     "listingState": "listed",
     "listingNote": "2026-10-20に原掲載を表示確認。現況使用中につき引渡し・募集継続・保育用途を仲介会社に要確認。",
-    "contact": {"building":"慶愛ビル","url":"https://e-terrace-kanda.jp/bukken/syousai/3/19740dat.html","company":"株式会社エンジンテラス 池袋店","contact":"03-5953-2622。物件番号19740・1階を伝える。"}
+    "contact": {
+      "building": "慶愛ビル",
+      "url": "https://e-terrace-kanda.jp/bukken/syousai/3/19740dat.html",
+      "company": "株式会社エンジンテラス 池袋店",
+      "contact": "03-5953-2622。物件番号19740・1階を伝える。"
+    }
   },
   {
     "id": "engine-terrace-nakamura2-1f-14196",
@@ -1586,7 +1723,12 @@ window.PROPERTIES = [
     "checkedAt": "2026-10-20",
     "listingState": "listed",
     "listingNote": "2026-10-20に原掲載を表示確認。募集継続・保育用途・設備工事の範囲は仲介会社に要確認。",
-    "contact": {"building":"第２ナカムラビル","url":"https://e-terrace-kanda.jp/bukken/syousai/2/14196dat.html","company":"株式会社エンジンテラス 池袋店","contact":"03-5953-2622。物件番号14196・1階を伝える。"}
+    "contact": {
+      "building": "第２ナカムラビル",
+      "url": "https://e-terrace-kanda.jp/bukken/syousai/2/14196dat.html",
+      "company": "株式会社エンジンテラス 池袋店",
+      "contact": "03-5953-2622。物件番号14196・1階を伝える。"
+    }
   },
   {
     "id": "engine-terrace-shimane-1-2f-19644",
@@ -1611,7 +1753,12 @@ window.PROPERTIES = [
     "checkedAt": "2026-10-20",
     "listingState": "listed",
     "listingNote": "2026-10-20に原掲載を表示確認。各階面積、空室・募集継続・保育用途は仲介会社に要確認。",
-    "contact": {"building":"島根ビル","url":"https://e-terrace-kanda.jp/bukken/syousai/3/19644dat.html","company":"株式会社エンジンテラス 池袋店","contact":"03-5953-2622。物件番号19644・1〜2階を伝える。"}
+    "contact": {
+      "building": "島根ビル",
+      "url": "https://e-terrace-kanda.jp/bukken/syousai/3/19644dat.html",
+      "company": "株式会社エンジンテラス 池袋店",
+      "contact": "03-5953-2622。物件番号19644・1〜2階を伝える。"
+    }
   },
   {
     "id": "engine-terrace-heibonrikkyo-3f-15474",
@@ -1636,14 +1783,24 @@ window.PROPERTIES = [
     "checkedAt": "2026-10-20",
     "listingState": "listed",
     "listingNote": "2026-10-20に原掲載を表示確認。空室・募集継続・保育用途は仲介会社に要確認。",
-    "contact": {"building":"平凡立教前ビル","url":"https://e-terrace-kanda.jp/bukken/syousai/3/15474dat.html","company":"株式会社エンジンテラス 池袋店","contact":"03-5953-2622。物件番号15474・3階を伝える。"}
+    "contact": {
+      "building": "平凡立教前ビル",
+      "url": "https://e-terrace-kanda.jp/bukken/syousai/3/15474dat.html",
+      "company": "株式会社エンジンテラス 池袋店",
+      "contact": "03-5953-2622。物件番号15474・3階を伝える。"
+    }
   },
   {
     "id": "miki-gowa-nishishinjuku-3f-02113669",
     "name": "ＧＯＷＡ西新宿 3階",
     "station": "大久保",
     "walk": 5,
-    "access": [{"station":"新宿西口","walk":4}],
+    "access": [
+      {
+        "station": "新宿西口",
+        "walk": 4
+      }
+    ],
     "address": "東京都新宿区西新宿7丁目5-8",
     "type": "貸事務所",
     "area": 136.761,
@@ -1662,7 +1819,12 @@ window.PROPERTIES = [
     "checkedAt": "2026-10-21",
     "listingState": "listed",
     "listingNote": "2026-10-21に原掲載を確認。入居可能日『即日』の表示は空室保証ではない。保育用途・募集継続を仲介会社に要確認。",
-    "contact": {"building":"ＧＯＷＡ西新宿","url":"https://www.e-miki.com/search/detail/021_13669.html","company":"三鬼商事株式会社","contact":"0120-534-011（平日9:00〜17:00）。お問い合わせ番号021-13669・3階区画を伝える。"}
+    "contact": {
+      "building": "ＧＯＷＡ西新宿",
+      "url": "https://www.e-miki.com/search/detail/021_13669.html",
+      "company": "三鬼商事株式会社",
+      "contact": "0120-534-011（平日9:00〜17:00）。お問い合わせ番号021-13669・3階区画を伝える。"
+    }
   },
   {
     "id": "miki-meiho-shinjuku-1f-02111985",
@@ -1687,6 +1849,217 @@ window.PROPERTIES = [
     "checkedAt": "2026-10-21",
     "listingState": "listed",
     "listingNote": "2026-10-21に原掲載を確認。『即日』表示は空室保証ではなく、賃料・保育用途・募集継続を仲介会社に要確認。",
-    "contact": {"building":"明宝ビル","url":"https://www.e-miki.com/search/detail/021_11985.html","company":"三鬼商事株式会社","contact":"0120-534-011（平日9:00〜17:00）。お問い合わせ番号021-11985・1階区画を伝える。"}
+    "contact": {
+      "building": "明宝ビル",
+      "url": "https://www.e-miki.com/search/detail/021_11985.html",
+      "company": "三鬼商事株式会社",
+      "contact": "0120-534-011（平日9:00〜17:00）。お問い合わせ番号021-11985・1階区画を伝える。"
+    }
+  },
+  {
+    "id": "mejiro-mejiro2chome-shop-1f-b1-t0363",
+    "name": "目白二丁目店舗 1階・地下1階",
+    "station": "目白",
+    "walk": 9,
+    "access": [
+      {
+        "station": "雑司が谷",
+        "walk": 1
+      }
+    ],
+    "address": "東京都豊島区目白2-4-10",
+    "type": "貸店舗・事務所（オフィス等相談可）",
+    "area": 83.9,
+    "floor": "1階・地下1階 / 建物総階数不明",
+    "rent": "38.5万円 / 月（税込）",
+    "structure": "RC造・1978年築",
+    "elevator": "有（掲載設備欄。区画の利用可否は要確認）",
+    "exits": "不明",
+    "published": "情報登録 2026-10-23／更新予定 2026-10-30",
+    "fit": "review",
+    "fitLabel": "要重点確認",
+    "reason": "83.9㎡・1階を含むが、地下1階との面積配分が不明。保育室を置く階、採光換気、独立した2出口・2方向避難、階段、貸主の保育用途承諾を確認。行政・建築・消防上の適合確認ではない。",
+    "source": "https://hello-tokyo.jp/bukken/t0363/",
+    "sourceName": "コンニチハトーキョー（原掲載）",
+    "evidence": "原掲載に1F-B1、目白駅徒歩9分、83.9㎡、賃料38.5万円、相談可能業種を表示。地下部分の用途・各階面積は不明。",
+    "checkedAt": "2026-10-27",
+    "listingState": "listed",
+    "listingNote": "2026-10-27に原掲載を確認。公開掲載は募集中の手掛かりだが、空室・保育用途は仲介会社未確認。",
+    "contact": {
+      "building": "目白二丁目店舗",
+      "url": "https://hello-tokyo.jp/bukken/t0363/",
+      "company": "コンニチハトーキョー株式会社",
+      "contact": "原掲載の「LOOK! 内見する」または info@hello-tokyo.jp。物件番号T0363を伝える。"
+    }
+  },
+  {
+    "id": "mejiro-nao-1f-6992591995",
+    "name": "NAOビル 1階",
+    "station": "目白",
+    "walk": 6,
+    "access": [
+      {
+        "station": "椎名町",
+        "walk": 15
+      }
+    ],
+    "address": "東京都新宿区下落合3-15-22",
+    "type": "貸店舗・事務所",
+    "area": 72.58,
+    "floor": "1階 / 5階建",
+    "rent": "57.2万円 / 月（税込表示）",
+    "structure": "鉄骨造・1982年8月築",
+    "elevator": "不明（1階区画）",
+    "exits": "不明",
+    "published": "大恭の掲載情報公開 2026-10-15／次回更新予定 2026-10-29",
+    "fit": "review",
+    "fitLabel": "要重点確認",
+    "reason": "72.58㎡の1階区画。独立した2出口、保育用途の貸主承諾、耐震性能、採光換気、送迎動線、定期借家5年の継続性を確認。行政・建築・消防上の適合確認ではない。",
+    "source": "https://www.daikyofudousan.co.jp/kasi-tenpo/detail-6ad038f2c258eb045a8cb709/",
+    "sourceName": "有限会社大恭（原掲載の検索記録）",
+    "evidence": "大恭と目白商事の掲載記録が面積・賃料・階数で一致。大恭の現況は空と表示。ただし今回、原掲載の直接表示に失敗。",
+    "checkedAt": "2026-10-27",
+    "listingState": "unverified",
+    "listingNote": "検索記録では2026-10-15公開・次回更新10月29日。原掲載を直接表示できず、募集継続・保育用途は要再確認。",
+    "contact": {
+      "building": "NAOビル",
+      "url": "https://www.daikyofudousan.co.jp/kasi-tenpo/detail-6ad038f2c258eb045a8cb709/",
+      "company": "有限会社大恭",
+      "contact": "03-3917-3111。物件番号6992591995・NAOビル1階を伝える。目白商事の掲載窓口03-3953-2221もあり。"
+    }
+  },
+  {
+    "id": "mejiro-gomu-sangyo-kaikan-102-homes-91810000725",
+    "name": "ゴム産業会館 102号・1階",
+    "station": "目白",
+    "walk": 7,
+    "access": [
+      {
+        "station": "雑司が谷",
+        "walk": 9
+      }
+    ],
+    "address": "東京都豊島区目白2-3-3",
+    "type": "貸事務所",
+    "area": 88.87,
+    "floor": "1階 / 5階建",
+    "rent": "44万円 / 月（HOME'S表示、管理費なし）",
+    "structure": "鉄骨造・1980年7月築",
+    "elevator": "有（HOME'S設備欄）",
+    "exits": "不明",
+    "published": "HOME'S検索記録 2026-10-27時点に更新表示／詳細な更新日不明",
+    "fit": "review",
+    "fitLabel": "要重点確認",
+    "reason": "88.87㎡・1階でEVあり。ただし旧耐震期の建物で耐震性能、保育用途の貸主承諾、独立した2出口・2方向避難、採光換気を確認。行政・建築・消防上の適合確認ではない。",
+    "source": "https://www.homes.co.jp/chintai/b-91810000725/",
+    "sourceName": "LIFULL HOME'S（検索記録）",
+    "evidence": "HOME'S検索記録は賃料44万円・88.87㎡・1階を表示。一方オアシスの同区画ページには募集終了文言と募集中表示が併存。",
+    "checkedAt": "2026-10-27",
+    "listingState": "unverified",
+    "listingNote": "媒体間で募集状況が矛盾。HOME'S掲載の再確認と仲介会社への空室照会が必要。成約済みとは断定しない。",
+    "contact": {
+      "building": "ゴム産業会館",
+      "url": "https://www.homes.co.jp/chintai/b-91810000725/",
+      "company": "センチュリー21パキラハウス（HOME'S取扱い）",
+      "contact": "HOME'S原掲載フォームから物件番号0009181-0000725を伝える。別媒体オアシス池袋店 03-5928-6666（区画208553）でも照会可。"
+    }
+  },
+  {
+    "id": "mejiro222-2f-eiyu",
+    "name": "Mejiro222ビル 2階",
+    "station": "目白",
+    "walk": 7,
+    "access": [
+      {
+        "station": "雑司が谷",
+        "walk": 3
+      }
+    ],
+    "address": "東京都豊島区目白2-2-2",
+    "type": "貸事務所（店舗利用は要相談）",
+    "area": 83.24,
+    "floor": "2階 / 地上4階・地下1階建",
+    "rent": "35万円 / 月（税込、共益費2万円）",
+    "structure": "RC造・1990年3月築",
+    "elevator": "不明",
+    "exits": "不明",
+    "published": "英佑商事掲載 2025-12-04／直近更新日不明",
+    "fit": "review",
+    "fitLabel": "要重点確認",
+    "reason": "83.24㎡・2階。募集情報が古く、保育用途の貸主承諾、独立した2出口・2方向避難、階段・EV、現況を確認。行政・建築・消防上の適合確認ではない。",
+    "source": "https://ei-yu.com/mejiro-2f/",
+    "sourceName": "有限会社英佑商事（原掲載）",
+    "evidence": "原掲載に面積・賃料・階数・住所・目白駅徒歩7分、現況空・即時と表示。ただし掲載は2025年12月。",
+    "checkedAt": "2026-10-27",
+    "listingState": "unverified",
+    "listingNote": "原掲載の情報日が古いため募集継続は不明。HOME'Sにも過去の同区画掲載記録あり。",
+    "contact": {
+      "building": "Mejiro222ビル",
+      "url": "https://ei-yu.com/mejiro-2f/",
+      "company": "有限会社英佑商事",
+      "contact": "原掲載内「お問い合わせフォーム」から、Mejiro222ビル2階・83.24㎡と伝える。"
+    }
+  },
+  {
+    "id": "mejiro-daido-3f-033829",
+    "name": "大同ビル 3階・303区画",
+    "station": "目白",
+    "walk": 6,
+    "access": [],
+    "address": "東京都新宿区下落合3-16-10",
+    "type": "貸事務所",
+    "area": 184.56,
+    "floor": "3階 / 3階建",
+    "rent": "75.579万円 / 月（共益費込・掲載表示）",
+    "structure": "RC造・1971年7月築、改修2007年",
+    "elevator": "有（掲載建物欄）",
+    "exits": "不明",
+    "published": "貸事務所ドットコム更新 2026-08-28",
+    "fit": "review",
+    "fitLabel": "要重点確認",
+    "reason": "184.56㎡で面積に余裕があるが3階。旧耐震期の建物のため耐震資料、独立した2出口・2方向避難、階段・EV、保育用途の貸主承諾を確認。行政・建築・消防上の適合確認ではない。",
+    "source": "https://tokyo.kashi-jimusho.com/eki/%E7%9B%AE%E7%99%BD%E9%A7%85/",
+    "sourceName": "貸事務所ドットコム（駅別募集一覧）",
+    "evidence": "駅別募集一覧に3階184.56㎡、目白駅徒歩6分、賃料75.579万円、EV1基を表示。更新が8月28日で古い。",
+    "checkedAt": "2026-10-27",
+    "listingState": "unverified",
+    "listingNote": "2026-08-28更新の一覧情報。現時点の募集・空室・保育用途は仲介会社に要確認。",
+    "contact": {
+      "building": "大同ビル",
+      "url": "https://tokyo.kashi-jimusho.com/eki/%E7%9B%AE%E7%99%BD%E9%A7%85/",
+      "company": "貸事務所ドットコム掲載窓口",
+      "contact": "駅別一覧の「この物件を今すぐお問合せ」から物件番号033829・3階303区画を伝える。"
+    }
+  },
+  {
+    "id": "mejiro3-pj-1f-usen-217556",
+    "name": "（仮称）目白3丁目PJ 1階",
+    "station": "目白",
+    "walk": 2,
+    "access": [],
+    "address": "東京都豊島区目白3-5-16",
+    "type": "貸店舗（業種相談）",
+    "area": 62.15,
+    "floor": "1階 / 建物総階数不明",
+    "rent": "103.4万円 / 月",
+    "structure": "構造・竣工時期不明",
+    "elevator": "不明",
+    "exits": "不明",
+    "published": "USEN情報公開・更新 2026-09-01／飲食店ドットコム掲載記録 2026-10-20",
+    "fit": "review",
+    "fitLabel": "要重点確認",
+    "reason": "約62.15㎡・1階だが、床面積は18.80坪からの概算で余裕が少ない。賃料、保育用途の貸主承諾、独立した2出口、構造・消防条件を確認。行政・建築・消防上の適合確認ではない。",
+    "source": "https://canaeru.usen.com/bukken/p217556/",
+    "sourceName": "USEN canaeru（原掲載）",
+    "evidence": "原掲載に1階・18.80坪・目白駅徒歩2分・賃料103.4万円を表示。18.80坪×3.305785＝約62.15㎡。飲食店ドットコムの同住所・同面積・同賃料掲載記録とも一致。",
+    "checkedAt": "2026-10-27",
+    "listingState": "unverified",
+    "listingNote": "USEN原掲載の更新は9月1日。募集継続・現況・保育用途は要再確認。",
+    "contact": {
+      "building": "（仮称）目白3丁目PJ",
+      "url": "https://canaeru.usen.com/bukken/p217556/",
+      "company": "USEN canaeru掲載窓口",
+      "contact": "原掲載の「この物件にお問い合わせ（無料）」から物件ID217556を伝える。"
+    }
   }
 ];
