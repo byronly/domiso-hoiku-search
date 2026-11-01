@@ -634,9 +634,9 @@ window.PROPERTIES = [
     "source": "https://www.athome.co.jp/rent_store/6984123095/",
     "sourceName": "at home（直接確認）",
     "evidence": "at homeの原掲載で66.12㎡・28.6万円・東西線高田馬場徒歩6分・1階／13階建・SRC・1982年10月築・現況「空」を確認。保育用途、EV、独立2出口は不明。",
-    "checkedAt": "2026-10-31",
+    "checkedAt": "2026-11-01",
     "listingState": "listed",
-    "listingNote": "2026-10-31に原掲載を直接確認。現況「空」は仲介会社への空室確認ではありません。保育用途の承諾は未確認。",
+    "listingNote": "2026-11-01にat home原掲載を直接再確認。賃料28.6万円、66.12㎡、1階／13階建の表示は継続。現況「空」は仲介会社への空室確認ではありません。保育用途の承諾は未確認。",
     "contact": {
       "building": "ビル名不明",
       "url": "https://www.athome.co.jp/rent_store/6984123095/",
@@ -1952,16 +1952,20 @@ window.PROPERTIES = [
     "fitLabel": "要重点確認",
     "reason": "88.87㎡・1階でEVあり。ただし旧耐震期の建物で耐震性能、保育用途の貸主承諾、独立した2出口・2方向避難、採光換気を確認。行政・建築・消防上の適合確認ではない。",
     "source": "https://www.homes.co.jp/chintai/b-91810000725/",
-    "sourceName": "LIFULL HOME'S（検索記録）",
-    "evidence": "HOME'S検索記録は賃料44万円・88.87㎡・1階を表示。一方オアシスの同区画ページには募集終了文言と募集中表示が併存。",
-    "checkedAt": "2026-10-27",
+    "sourceName": "LIFULL HOME'S（掲載終了表示を直接確認）",
+    "evidence": "2026-11-01にHOME'Sの物件番号0009181-0000725を直接開くと「該当物件の掲載は終了しました」と表示。パキラハウスのページは過去の掲載を基にした非広告の参考情報で、現行募集の証拠にはならない。他媒体の102区画掲載記録との間で募集継続は不明。",
+    "checkedAt": "2026-11-01",
     "listingState": "unverified",
-    "listingNote": "媒体間で募集状況が矛盾。HOME'S掲載の再確認と仲介会社への空室照会が必要。成約済みとは断定しない。",
+    "listingNote": "HOME'Sの当該掲載は終了。物件自体の募集終了・成約は未確認。別媒体の掲載は古いか現況が不明なため、取扱会社に102区画の最新募集状況を確認してください。",
     "contact": {
       "building": "ゴム産業会館",
       "url": "https://www.homes.co.jp/chintai/b-91810000725/",
-      "company": "センチュリー21パキラハウス（HOME'S取扱い）",
-      "contact": "HOME'S原掲載フォームから物件番号0009181-0000725を伝える。別媒体オアシス池袋店 03-5928-6666（区画208553）でも照会可。"
+      "company": "当該HOME'S掲載の窓口は終了／別媒体オアシス池袋店の取扱いは要確認",
+      "contact": "HOME'Sの旧掲載からは問い合わせ不可。別媒体オアシス池袋店 03-5928-6666 に物件番号208553・102区画の現行募集を照会（取扱い継続は未確認）。"
+    },
+    "relatedSource": {
+      "url": "https://www.oasis-estate.jp/building/52886/208553",
+      "label": "オアシスの同区画掲載記録（募集継続は未確認）"
     }
   },
   {
@@ -2244,6 +2248,42 @@ window.PROPERTIES = [
       "url": "https://www.inshokuten.com/bukken/bukkens/398682",
       "company": "取扱不動産会社：一般公開部分では不明",
       "contact": "原掲載の「物件のお問い合わせ」（無料会員登録）から物件番号398682を伝える。"
+    }
+  },
+  {
+    "id": "homes-times-mejiro-3f-1230860016062",
+    "name": "タイムズ・ビル 3階",
+    "station": "目白",
+    "walk": 8,
+    "access": [
+      {
+        "station": "雑司が谷",
+        "walk": 3
+      }
+    ],
+    "address": "東京都豊島区目白1-7-13",
+    "type": "貸事務所",
+    "area": 73.54,
+    "floor": "3階 / 7階建",
+    "rent": "37.51万円 / 月（管理費4.84万円、税区分不明）",
+    "structure": "SRC・2006年4月築",
+    "elevator": "有（LIFULL HOME'S設備欄）",
+    "exits": "不明",
+    "published": "HOME'S公開 2026-05-26／更新 2026-10-29／次回更新予定 2026-11-05",
+    "fit": "review",
+    "fitLabel": "要重点確認",
+    "reason": "73.54㎡・3階で検索条件内。EVはあるが、保育用途への貸主承諾、独立した2出口・2方向避難、階段幅、採光換気、児童用設備の可否を確認。行政・建築・消防上の適合確認ではない。",
+    "source": "https://www.homes.co.jp/chintai/b-1230860016062/",
+    "sourceName": "LIFULL HOME'S（原掲載を直接確認）",
+    "evidence": "HOME'S原掲載で3階73.54㎡、賃料37.51万円＋管理費4.84万円、SRC・2006年4月築、EV有、現況空家・即時を確認。目白駅徒歩8分は同媒体の目白エリア一覧に表示。原詳細の交通欄は鬼子母神前・雑司が谷等を記載。",
+    "checkedAt": "2026-11-01",
+    "listingState": "listed",
+    "listingNote": "原掲載に現況「空家」・即時引渡しと表示。ただし仲介会社への空室・保育用途の確認は未実施。",
+    "contact": {
+      "building": "タイムズ・ビル",
+      "url": "https://www.homes.co.jp/chintai/b-1230860016062/",
+      "company": "株式会社ビルバンク 東京本部",
+      "contact": "HOME'Sの問い合わせフォーム、または0037-633-63246（問い合わせ番号226476、平日9:00〜17:30）。物件番号0123086-0016062を伝える。"
     }
   }
 ];
