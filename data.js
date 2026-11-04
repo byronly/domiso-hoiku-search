@@ -634,9 +634,9 @@ window.PROPERTIES = [
     "source": "https://www.athome.co.jp/rent_store/6984123095/",
     "sourceName": "at home（直接確認）",
     "evidence": "at homeの原掲載で66.12㎡・28.6万円・東西線高田馬場徒歩6分・1階／13階建・SRC・1982年10月築・現況「空」を確認。保育用途、EV、独立2出口は不明。",
-    "checkedAt": "2026-11-01",
+    "checkedAt": "2026-11-02",
     "listingState": "listed",
-    "listingNote": "2026-11-01にat home原掲載を直接再確認。賃料28.6万円、66.12㎡、1階／13階建の表示は継続。現況「空」は仲介会社への空室確認ではありません。保育用途の承諾は未確認。",
+    "listingNote": "2026-11-02にat home原掲載を直接再確認。賃料28.6万円、66.12㎡、1階／13階建、次回更新予定11月13日の表示。現況「空」は仲介会社への空室確認ではありません。保育用途の承諾は未確認。",
     "contact": {
       "building": "ビル名不明",
       "url": "https://www.athome.co.jp/rent_store/6984123095/",
@@ -2269,21 +2269,61 @@ window.PROPERTIES = [
     "structure": "SRC・2006年4月築",
     "elevator": "有（LIFULL HOME'S設備欄）",
     "exits": "不明",
-    "published": "HOME'S公開 2026-05-26／更新 2026-10-29／次回更新予定 2026-11-05",
+    "published": "HOME'S公開 2026-05-26／更新 2026-11-01／次回更新予定 2026-11-08",
     "fit": "review",
     "fitLabel": "要重点確認",
     "reason": "73.54㎡・3階で検索条件内。EVはあるが、保育用途への貸主承諾、独立した2出口・2方向避難、階段幅、採光換気、児童用設備の可否を確認。行政・建築・消防上の適合確認ではない。",
     "source": "https://www.homes.co.jp/chintai/b-1230860016062/",
     "sourceName": "LIFULL HOME'S（原掲載を直接確認）",
     "evidence": "HOME'S原掲載で3階73.54㎡、賃料37.51万円＋管理費4.84万円、SRC・2006年4月築、EV有、現況空家・即時を確認。目白駅徒歩8分は同媒体の目白エリア一覧に表示。原詳細の交通欄は鬼子母神前・雑司が谷等を記載。",
-    "checkedAt": "2026-11-01",
+    "checkedAt": "2026-11-02",
     "listingState": "listed",
-    "listingNote": "原掲載に現況「空家」・即時引渡しと表示。ただし仲介会社への空室・保育用途の確認は未実施。",
+    "listingNote": "2026-11-02に原掲載を再確認。現況「空家」・即時引渡しと表示。ただし仲介会社への空室・保育用途の確認は未実施。",
     "contact": {
       "building": "タイムズ・ビル",
       "url": "https://www.homes.co.jp/chintai/b-1230860016062/",
       "company": "株式会社ビルバンク 東京本部",
       "contact": "HOME'Sの問い合わせフォーム、または0037-633-63246（問い合わせ番号226476、平日9:00〜17:30）。物件番号0123086-0016062を伝える。"
+    }
+  },
+  {
+    "id": "osekkai-jokers-house-wakamatsucho-1f-38406",
+    "name": "ジョーカーズハウス 1階",
+    "station": "早稲田",
+    "walk": 8,
+    "access": [
+      {
+        "station": "若松河田",
+        "walk": 3
+      },
+      {
+        "station": "牛込柳町",
+        "walk": 8
+      }
+    ],
+    "address": "東京都新宿区若松町29-8",
+    "type": "店舗・事務所（原掲載に事務所可、飲食店可の表示）",
+    "area": 75.81,
+    "floor": "1階 / 建物階数不明",
+    "rent": "38.7万円 / 月（共益費・管理費7,150円、税込と表示）",
+    "structure": "RC・1968年1月築",
+    "elevator": "不明",
+    "exits": "不明",
+    "published": "OSEKKAI情報更新 2026-10-22／掲載開始日不明",
+    "fit": "review",
+    "fitLabel": "要重点確認",
+    "reason": "75.81㎡・1階・早稲田駅徒歩8分で検索条件内。共同トイレのため児童用設備への改修可否、保育用途への貸主承諾、独立2出口・2方向避難、旧耐震建物の構造・改修状況を優先確認。行政・建築・消防上の適合確認ではない。",
+    "source": "https://business.osekkai-rooms.jp/tokyo/properties/p-38406-tpysu7",
+    "sourceName": "OSEKKAI TENANTs TOKYO（原掲載を直接確認）",
+    "evidence": "原掲載に「募集中」「空室確認16日前」、早稲田駅徒歩8分、1階75.81㎡、月額38.7万円＋管理費7,150円、現況空家・即時を表示。共同トイレ・RC・1968年1月築。媒体の業種分類はAIによるため保育用途の承諾を意味しない。",
+    "checkedAt": "2026-11-02",
+    "listingState": "listed",
+    "listingNote": "2026-11-02に原掲載を確認。掲載上の空室確認は16日前。仲介会社への最新空室・保育用途確認は未実施。",
+    "contact": {
+      "building": "ジョーカーズハウス",
+      "url": "https://business.osekkai-rooms.jp/tokyo/properties/p-38406-tpysu7",
+      "company": "株式会社PERVA（おせっかい不動産 東京本社）",
+      "contact": "03-6428-7357（9:00〜20:00・年中無休）。原掲載の「空き状況を確認する」「内見を相談」からも問い合わせ可能。物件名と若松町29-8・1階区画を伝える。"
     }
   }
 ];
